@@ -16,6 +16,9 @@ class GA:
         #Number of iterations to perform
         self.numIterations = 25
 
+        #Mutation Factor for mutating
+        self.mutationFactor = .3
+
         #Pairing Types Currently Available:
         # a. topDown
         # b. tournament
@@ -72,7 +75,7 @@ class GA:
             self.population += offspring
 
             # * Mutate New Population
-            # TODO: Build Mutation Algorithm
+            self.mutate_population()
 
             # * Resort New Population
             self.sortPopulation()
@@ -86,6 +89,17 @@ class GA:
              #   print chrom.getCost()
 
             print ''
+
+
+
+    # ***********************************
+    # * Mutation Function
+    # ***********************************
+    def mutate_population(self):
+        for indiv in self.population:
+            # limit how often an individual is mutated
+            if random.random() <= self.mutationFactor:
+                indiv.mutate()
 
 
 

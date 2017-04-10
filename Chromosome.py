@@ -1,11 +1,20 @@
 
 import TSP
+import random
 
 class Chromosome:
     def __init__(self, newGene):
         self.tsp = TSP.TSP("tsp.csv")
         self.gene = newGene
         self.cost = self.calculateCost(newGene)
+
+    def mutate(self):
+        index1 = random.randint(0, 7)
+        index2 = random.randint(0, 7)
+        temp = self.gene[index1]
+        self.gene[index1] = self.gene[index2]
+        self.gene[index2] = temp
+
 
     def getGene(self):
         return self.gene
@@ -29,7 +38,7 @@ class Chromosome:
         index2 = 0
 
         if locA == 'a':
-           index1 = 0
+            index1 = 0
         elif locA == 'b':
             index1 = 1
         elif locA == 'c':
@@ -46,7 +55,7 @@ class Chromosome:
             index1 = 7
 
         if locB == 'a':
-           index2 = 0
+            index2 = 0
         elif locB == 'b':
             index2 = 1
         elif locB == 'c':

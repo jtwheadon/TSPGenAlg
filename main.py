@@ -1,7 +1,5 @@
 
 import GA
-import numpy
-import random
 
 def main():
     ga = GA.GA()
