@@ -6,8 +6,6 @@ import Mate
 class GA:
     def __init__(self):
 
-        #Test Commit Haha
-
         # ***********************************
         # * Parameters for Algorithm
         # ***********************************
