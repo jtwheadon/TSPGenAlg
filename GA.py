@@ -6,10 +6,16 @@ import Mate
 class GA:
     def __init__(self):
 
+        #Test Commit
+
         # ***********************************
         # * Parameters for Algorithm
         # ***********************************
+
+        #Number of Chromosomes in each iteration
         self.populationSize = 100
+
+        #Number of iterations to perform
         self.numIterations = 25
 
         #Pairing Types Currently Available:
@@ -79,7 +85,7 @@ class GA:
 
             # Uncomment below to see all chromosome costs at each step
             #for chrom in self.population:
-                #print chrom.getCost()
+             #   print chrom.getCost()
 
             print ''
 
