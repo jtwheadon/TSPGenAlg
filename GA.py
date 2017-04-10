@@ -17,7 +17,7 @@ class GA:
         self.numIterations = 25
 
         #Mutation Factor for mutating
-        self.mutationFactor = .3
+        self.mutationFactor = .5
 
         #Pairing Types Currently Available:
         # a. topDown
