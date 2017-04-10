@@ -45,7 +45,25 @@ class Mate:
 
     # Tournament Pairing
     def tournament(self, population):
-        print 'this is not yet implemented'
+        
+        fathers = []
+        mothers = []
+
+        # number of pairs to mate
+        matingPairs = 25
+
+        pair = 0
+
+        while pair < matingPairs:
+            subset = random.sample(population, 25)
+            subset2 = random.sample(population, 25)
+            parent1 = random.choice(subset)
+            parent2 = random.choice(subset2)
+            fathers.append(parent1)
+            mothers.append(parent2)
+            pair += 1
+
+        return fathers, mothers
 
 
 
