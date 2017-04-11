@@ -11,13 +11,16 @@ class GA:
         # ***********************************
 
         #Number of Chromosomes in each iteration
-        self.populationSize = 100
+        self.populationSize = 68
 
         #Number of iterations to perform
-        self.numIterations = 25
+        self.numIterations = 500
 
-        #Mutation Factor for mutating
-        self.mutationFactor = .5
+        #Mutation Factor for mutating (0-1.0)
+        self.mutationFactor = 0.3
+
+        #Intensity of mutation (Integer)
+        self.mutationIntensity = 10
 
         #Pairing Types Currently Available:
         # a. topDown
@@ -77,7 +80,7 @@ class GA:
             # * Mutate New Population
             self.mutate_population()
 
-            # * Resort New Population
+            # * Re-sort New Population
             self.sortPopulation()
 
             # * Print Best Chromosome in Population
@@ -99,7 +102,7 @@ class GA:
         for indiv in self.population:
             # limit how often an individual is mutated
             if random.random() <= self.mutationFactor:
-                indiv.mutate()
+                indiv.mutate(self.mutationIntensity)
 
 
 

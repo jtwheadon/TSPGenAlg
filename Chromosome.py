@@ -8,12 +8,15 @@ class Chromosome:
         self.gene = newGene
         self.cost = self.calculateCost(newGene)
 
-    def mutate(self):
-        index1 = random.randint(0, 7)
-        index2 = random.randint(0, 7)
-        temp = self.gene[index1]
-        self.gene[index1] = self.gene[index2]
-        self.gene[index2] = temp
+    def mutate(self,mutationIntensity):
+        for i in range(mutationIntensity):
+            index1 = random.randint(1, 7)
+            index2 = random.randint(1, 7)
+            temp = self.gene[index1]
+            self.gene[index1] = self.gene[index2]
+            self.gene[index2] = temp
+
+        self.cost = self.calculateCost(self.gene)
 
 
     def getGene(self):

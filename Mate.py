@@ -95,7 +95,7 @@ class Mate:
             offspring2 = self.mothers[i].getGene()[1:8]
 
             #Perform Single-Point Crossover
-            crossoverPoint = random.randint(0,6)
+            crossoverPoint = random.randint(0,7)
             for j in range(crossoverPoint):
                 swap = offspring1[j]
                 offspring1[j] = offspring2[j]
